@@ -1,0 +1,107 @@
+#TITLE Nyan Cat
+#COMPOSER daniwellP
+#MAKER Tyler Barnes
+#PROGRAMER Tyler Barnes
+
+
+ABCDE t139
+ABCDE r2
+ABCD r4
+
+;Samples :
+@DPCM0 = { "samples/TylerBarnes/supd.dmc", 15}
+@DPCM2 = { "samples/TylerBarnes/Palamedes_$FAC0.dmc", 15}
+@DPCM4 = { "samples/TylerBarnes/Clicks.dmc", 15}
+
+
+@v1 {10 9 8 7 6 5 4 4 3} ;intro Decay
+@v2 {5 4 3 3 2 2 1} ;intro Reverb
+@v3 {7 6 6 5 5 4 3 2 1} ;Chords
+@v4 {15 12 8 3 1 0} ;hats
+@v5 {15 10 11 12 15 12 11 10 9 6 4 2 0} ;open hat
+@v6 {11 10 8 4 2 1 0} ;Snare
+@v7 {1 2 3 4 5 6 7 8 8 9 10} ;intro pre snare
+@v8 {5 5 4 4 3 3 2 2 1} ;kick reverb
+@v9 {15 15 15 15 15 14 13 12 11 10 9 8 7 6 5 4 5 3 2 1 0} ;Crash
+@v10 {7 0} ;Beater Click
+@v11 {6 5 4 3 2 2 2 3 3 4} ;Chords 2
+
+@EN0 {-5 5 7 5 -12| 7 5 7 -19}
+@EN1 {-7 7 5 7 -12 | 5 7 5 -17}
+
+;-------------Nyan---------------
+@0 {1 0 0 0 1 2 2 2 1} 
+@v0 {7 5 9 11 9 6 4 2}
+@EP0 {-3 1 1 1 0}
+;--------------------------------
+
+
+;---------------Song Start-----------------
+A @2 @v1 l16 o6 
+B @2 @v2 l16 o6
+
+
+;Intro
+A d+ e f+8 b8 d+ e f+ b >c+ d+ c+< a+ b8 f+8 d+ e f+8 b8 >c+< a+ b >c+ e d+ e c+<<
+B r8 d+ e f+8 b8 d+ e f+ b >c+ d+ c+< a+ b8 f+8 d+ e f+8 b8 >c+< a+ b >c+ e d+
+
+;-----------------Pulse A--------------------
+A @v0 @@0 EP0
+;1
+A L [f+8 g+8 d d+8 c+ d c+ <b8 b8> c+8 
+;2
+A d8 d c+ <b> c+ d+ f+ g+ d+ f+ c+ d+ <b> c+ <b>
+;3
+A d+8 f+8 g+ d+ f+ c+ d+ <b> d d+ d c+ <b> c+ 
+;4
+A d8 <b> c+ d+ f+ d d+ c+ <b> c+8 <b8> c+8]2
+;9
+A [<b8 f+ g+ b8 f+ g+ b> c+ d+ <b> e d+ e f+
+;10
+A <b8 b8 f+ g+ b f+> e d+ c+ <b e d+ e f+ 
+;11
+A b8 f+ g+ b8 f+ g+ b b> c+ d+ <b f+ g+ f+
+;12
+A b8 b a+ b f+ g+ b> e d+ e f+ <b8 | a+8]2 >c+8
+
+
+;-----------------Pulse B--------------------
+B l8 o4
+;1
+B L [[@1 @v3 EN1 <b> EN0 e4 f+ EN1 c+ EN0 d+4 g+4 c+ f+ @v11 @0 <b4> @1 w8 @2 | c+8 @2 w8]2 w8 @1 w8]2
+B [[@2 @v3 EN1 <b> EN0 e4 f+ EN1 c+ EN0 d+4 g+4 c+ f+ @v11 @0 <b4> @1 w8 @2 | c+8 @2 w8]2 w8 @1 w8]2
+;B [v6 @1 b2 v5 w2 v4 w2 v3 w4. v2 w4. v1 w4 v0 w1.]2
+
+
+;-----------------Triangle--------------------
+C l8 o3 
+;Intro
+C [r4]8;<[b8.r16]8>
+;1
+C L [e>e< f+>f+< d+>d+< g+>g+< 
+;2
+C c+>c+< f+>f+< <b>b< >c+ d+]4
+;9
+C [e g+ b >e< d+ f+ b >d+<
+;10
+C c+ e g+ b <b> d+ f+ b]4
+C o2
+ 
+;-----------------Noise--------------------
+D l4
+;Intro
+D @v6 e64f32f+32.r8^32 e64f32f+32. @v7 d+8^32 @v10 g64 @v8 d+8... [@v6 e64f32f+32.r32 @v4 [d16]2 | @v4 g64d32. r8.]2 @v6 e64f32f+32.r32 @v5 d+8 @v6 e64f32f+32.r32 [e64f32f+64]2
+;1
+D L [@v9 g64c+64d32d+32e8^32 [@v6 e64f32f+32.r32 @v4 [d+16]2 [ @v10 g64 r16.. @v4 d8 @v6 e64f32f+32.r32 @v4 | d8]2 [d16]2 @v10 g64 r16.. @v5 d+8 @v6 e64f32f+32.r32 | @v4 d16 @v5 d+16 @v10 g64r16.. @v4 d8]2 @v5 d+8
+;3
+D @v10 g64r16.. @v4 d8 [@v6 e64f32f+32.r32 @v4 [d+16]2 [@v10 g64 r16.. @v4 d8 @v6 e64f32f+32.r32 @v4 | d8]2 [d16]2 @v10 g64 r16.. @v5 d+8 @v6 e64f32f+32.r32 | @v4 d16 @v5 d+16 @v10 g64r16.. @v4 d8]2 @v6 e64f32f+32.r32 ]2
+
+
+;-----------------Samples--------------------
+E l4
+;Clicks
+E e4
+;Intro
+E d d c d8. c16 c d d d8 d16 d16
+;1
+E L [c d c d c d c d c d c d c d c d c d c d c d c d c d c d c d c d8 d8]2
